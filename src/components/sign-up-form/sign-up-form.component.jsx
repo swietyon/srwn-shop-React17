@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
+import Button from '../button/button.component';
 import './sign-up-form.styles.scss';
 
 
@@ -92,7 +93,7 @@ const SingUpForm = () => {
             value={confrimPassword}
           />
 
-          <button type="submit">Sign up</button>
+          <Button type="google">Sign up</Button>
       </form>
     </div>
   );
