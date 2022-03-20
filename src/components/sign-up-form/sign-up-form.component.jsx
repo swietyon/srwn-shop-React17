@@ -18,8 +18,6 @@ const SingUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confrimPassword } = formFields;
 
-    console.log(formFields);
-
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
@@ -54,7 +52,7 @@ const SingUpForm = () => {
   return (
     <div className='sign-up-container'>
       <h2>Don't have an account?</h2>
-      <a>Sign up filling below fields</a>
+      <p>Sign up filling below fields</p>
       <form onSubmit={handleSubmit}>
 
           <FormInput
