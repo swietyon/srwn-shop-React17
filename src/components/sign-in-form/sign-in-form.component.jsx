@@ -35,10 +35,16 @@ const SignInForm = () => {
             resetFormFields();
         }
         catch(error) {
-            if(error.code === 'auth/email-already-in-use'){
-                alert('Cannot create user, email already in user');
-            }
-            console.log('user creation encountered an error', error);
+          switch(error.code) {
+            case 'auth/wrong-password':
+              alert('incorrect password for email');
+              break;
+            case 'auth/user-not-found':
+              alert('no user associated with this email');
+              break;
+            default:
+              console.log(error);
+          }
         }
     }
 
@@ -51,8 +57,8 @@ const SignInForm = () => {
 
   return (
     <div className='sign-up-container'>
-        <h2>Already have an account?</h2>
-      <h1>Sign in</h1>
+      <h2>Already have an account?</h2>
+      <a>Sign in with email, and password</a>
       <form onSubmit={handleSubmit}>
 
           <FormInput 
@@ -74,8 +80,8 @@ const SignInForm = () => {
           />
 
           <div className='buttons-container'>
-            <Button type ='submit'>Sign in</Button>
-            <Button buttonType='google' onClick={signInWithGoogle} >Google sign in</Button>
+            <Button type='submit'>Sign in</Button>
+            <Button type='button' buttonType='google' onClick={signInWithGoogle} >Google sign in</Button>
           </div>
       </form>
     </div>
