@@ -7,6 +7,7 @@ import Authentication from './routes/authentication/authentication.component';
 import { CartProvider } from './contexts/cart.context';
 import {UserProvider} from './contexts/user.context';
 import { ProductsProvider } from './contexts/products.context';
+import Checkout from './routes/checkout/checkout.component';
 import Shop from './routes/shop/shop.component';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path='shop' element={<Shop />} />
                 <Route path='auth' element={<Authentication />} />
+                <Route path='checkout' element={<Checkout />} />
               </Route>
             </Routes>
           </CartProvider>
