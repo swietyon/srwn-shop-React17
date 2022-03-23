@@ -6,7 +6,7 @@ import Navigation from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication.component';
 import { CartProvider } from './contexts/cart.context';
 import {UserProvider} from './contexts/user.context';
-import { ProductsProvider } from './contexts/products.context';
+import { CategoriesProvider } from './contexts/categories.context';
 import Checkout from './routes/checkout/checkout.component';
 import Shop from './routes/shop/shop.component';
 
@@ -14,18 +14,18 @@ const App = () => {
   return(
     <BrowserRouter>
       <UserProvider>
-        <ProductsProvider>
+        <CategoriesProvider>
           <CartProvider>
             <Routes>
               <Route path='/' element={<Navigation />}>
                 <Route index element={<Home />} />
-                <Route path='shop' element={<Shop />} />
+                <Route path='shop/*' element={<Shop />} />
                 <Route path='auth' element={<Authentication />} />
                 <Route path='checkout' element={<Checkout />} />
               </Route>
             </Routes>
           </CartProvider>
-        </ProductsProvider>
+        </CategoriesProvider>
       </UserProvider>    
     </BrowserRouter>
   )
