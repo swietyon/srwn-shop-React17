@@ -27,7 +27,7 @@ const Navigation = () => {
 
                     {
                       currentUser ? (
-                        <NavLinksContainer onClick={signOutUser}>{' '}SIGN OUT{' '}</NavLinksContainer>
+                        <NavLink as='span' onClick={signOutUser}>{' '}SIGN OUT{' '}</NavLink>
                       ) : (
                         <NavLink to='/auth'>
                           SIGN IN
