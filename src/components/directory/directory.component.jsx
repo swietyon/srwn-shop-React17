@@ -41,7 +41,7 @@ const categories = [
       route: 'shop/mens'
     }
   ]
-  
+
 const Directory = () => {
   
   return (
